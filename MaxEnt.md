@@ -30,3 +30,27 @@ p_norm <- lapply(p, function(q) q / sum(q))
 
     ##         A         B         C         D         E 
     ## 0.0000000 0.6390319 0.9502705 1.4708085 1.6094379
+
+``` r
+ways <- c(1, 90, 1260, 37800, 113400)
+logwayspp <- log(ways) / 10
+
+# build list of candidate distributions
+p <- list()
+p[[1]] <- c(1/4, 1/4, 1/4, 1/4)
+p[[2]] <- c(2/6, 1/6, 1/6, 2/6)
+p[[3]] <- c(1/6, 2/6, 2/6, 1/6)
+p[[4]] <- c(1/8, 4/8, 2/8, 1/8)
+
+# compute expected value of each
+sapply(p, function(p) sum(p * c(0, 1, 1, 2)) )
+```
+
+    ## [1] 1 1 1 1
+
+``` r
+# compute entropy of each distribution
+sapply(p, function(p) -sum(p * log(p)))
+```
+
+    ## [1] 1.386294 1.329661 1.329661 1.213008
