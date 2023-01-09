@@ -2,7 +2,7 @@
 title: "MaxEnt"
 author: "GW Dean"
 date: "2023-01-06"
-output: html_document
+output: github_document
 ---
 Notes on Maximum Entropy. Adapted from McElreath-2019, Ch. 10
 
