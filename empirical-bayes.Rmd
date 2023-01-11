@@ -40,3 +40,19 @@ Responses can be found at the following link:
 
 https://stats.stackexchange.com/questions/47771/what-is-the-intuition-behind-beta-distribution
 
+Before looking at the analyses, we will gather together all of the libraries for setup that are listed at the beginning of each chapter.
+
+```{r eval = FALSE}
+library(dplyr)
+library(tidyr)
+library(Lahman)
+library(stats4)
+library(ggplot2)
+library(gamlss)
+library(broom)
+library(splines)
+library(VGAM)
+library(ebbr)
+library(purrr)
+```
+As we can see, the dependencies for the models used are heavy on the Tidyverse, as dplyr, tidyr, ggplot2, and purrr all make appearances. 

@@ -1,7 +1,7 @@
 Empirical Bayes
 ================
 GW Dean
-2023-01-10
+2023-01-11
 
 Notes on *Introduction to Empirical Bayes* (Robinson-2017)
 
@@ -51,3 +51,23 @@ sets the stage for what follows:
 Responses can be found at the following link:
 
 <https://stats.stackexchange.com/questions/47771/what-is-the-intuition-behind-beta-distribution>
+
+Before looking at the analyses, we will gather together all of the
+libraries for setup that are listed at the beginning of each chapter.
+
+``` r
+library(dplyr)
+library(tidyr)
+library(Lahman)
+library(stats4)
+library(ggplot2)
+library(gamlss)
+library(broom)
+library(splines)
+library(VGAM)
+library(ebbr)
+library(purrr)
+```
+
+As we can see, the dependencies for the models used are heavy on the
+Tidyverse, as dplyr, tidyr, ggplot2, and purrr all make appearances.
