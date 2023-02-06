@@ -1,0 +1,156 @@
+---
+title: "Luhmann Terms"
+author: "GW Dean"
+date: "2022-12-31"
+output: html_document
+---
+#### Complete List of Terms
+Art System (Kunstsystem)
+Asymmetrization (Asymmetrisierung)
+Attribution (Zurechnung)
+Autopoiesis
+Code 
+Communication (Kommunikation) 
+Complexity (Komplexität)
+Conflict (Konflikt) 
+Constructivism (Konstruktivismus) 
+Differentiation (Differenzierung/Ausdifferenzierung)
+Differentiation of Society (Differenzierung der Gesellschaft)
+Dissemination Media (Verbreitungsmedien)
+Double Contingency (Doppelte Kontingenz)
+Economic System (Wirtschaftssystem)
+Education System (Erziehungssystem)
+Event (Ereignis)
+Evolution
+Expectations (Erwartungen)
+Functional Analysis (Funktionale Analyse)
+Identity/Difference (Identität/Differenz)
+Inclusion/Exclusion (Inklusion/Exklusion) 
+Information
+Interaction (Interaktion) 
+Interpenetration and Structural Coupling (Interpenetration und strukturelle Kopplung) 
+Language (Sprache)
+Legal System (Rechtssystem) 
+Love (Liebe)
+Mass media (Massenmedien) 
+Meaning (Sinn)
+Meaning Dimensions (Sinndimensionen) 
+Medical System (Krankensystem) 
+Medium/Form
+Morality (Moral) 
+Negation
+Operation/Observation (Operation/Beobachtung) Organization (Organisation) 
+Paradox (Paradoxie) 
+Political System (Politisches System) 
+Power (Macht)
+Process (Prozess) 
+Program (Programm)
+Property/Money (Eigentum/Geld) 
+Protest
+Psychic Systems (Psychische Systeme)
+Rationality (Rationalität)
+Redundancy/Variety (Redundanz/Varietät) 
+Re-entry
+Religious System (Religionssystem) 
+Risk/Danger (Risiko/Gefahr) 
+Scientific System (Wissenschaftssystem) 
+Self-description (Selbstbeschreibung)
+Self-Reference (Selbstreferenz) 
+Semantics (Semantik)
+Social System (Soziales System) 
+Society (Gesellschaft) 
+Sociological Enlightenment (Soziologische Aufklärung) 
+Structure (Struktur)
+Symbolically Generalized Media (Symbolisch generalisierte Kommunikationsmedien) 
+System/Environment (System/Umwelt) 
+System of Families (System der Familien) 
+Time (Zeit)
+Truth (Wahrheit) 
+Values (Werte)
+World (Welt)
+World Society (Weltgesellschaft)
+
+#### Way 1. Meaning and its Development.
+Meaning
+Complexity
+World
+Meaning Dimensions
+Attribution
+Negation
+
+#### Way 2. Basic Concepts of Systems Theory.
+System/Environment
+Autopoesis
+Operation/Observation
+Self-Reference
+Paradox
+Asymmetrization
+Redundancy/Variation
+Structure
+Process
+
+#### Way 3. Foundation of Theory from its "Technological Side".
+Science
+Constructivism
+Operation/Observation
+Identity/Difference
+Information
+Re-entry
+Reflection
+Rationality
+Sociological Enlightenment
+Functional Analysis
+
+#### Way 4. Sociological Questions of the Theory of Social Systems.
+Double Contingency
+Expectations
+Communication
+Social System
+Society
+Differentiation of Society
+Semantics
+Interaction
+Organization
+Conflict
+Interpenetration and Structural Coupling
+Psychic Systems
+Inclusion/Exclusion
+
+#### Way 5. Functional Differentiation.
+Differentiation
+Differentiation of Society
+Code
+Program
+Education System
+Art System
+Medical System
+Political System
+Legal System
+Religious System
+System of Families
+Economic System
+Scientific System
+Risk/Danger
+
+#### Way 6. Probability and Improbability of Communication.
+Communication
+Medium/Form
+Code
+Language
+Dissemination Media
+Symbolically Generalized Media
+Property/Money
+Art
+Love
+Power
+Truth
+Values
+Morality
+
+#### Way 7. Temporal Dimension.
+Meaning Dimensions
+Time
+Event
+Structure
+Process
+Evolution
