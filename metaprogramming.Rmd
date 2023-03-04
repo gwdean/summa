@@ -1,0 +1,10 @@
+---
+title: "Metaprogramming"
+author: "GW Dean"
+date: "`r Sys.Date()`"
+output: github_document
+---
+# Notes on Metaprogramming
+
+library(rlang)
+library(lobstr)

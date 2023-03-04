@@ -55,4 +55,5 @@ library(VGAM)
 library(ebbr)
 library(purrr)
 ```
-As we can see, the dependencies for the models used are heavy on the Tidyverse, as dplyr, tidyr, ggplot2, and purrr all make appearances. 
+As we can see, the dependencies for the models used are heavy on the Tidyverse, as dplyr, tidyr, ggplot2, and purrr all make appearances.
+
