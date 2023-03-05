@@ -8,3 +8,35 @@ output: github_document
 
 library(rlang)
 library(lobstr)
+
+### Code is Data
+expr(mean(x, na.rm = TRUE))
+
+expr(10 + 100 * 1000)
+
+- Captured code is called an *expression*.
+
+capture_it <- function(x) {
+  expr(x)
+}
+capture_it(a + b + c)
+
+capture_it <- function(x) {
+  enexpr(x)
+}
+capture_it(a + b + c)
+
+f <- expr(f(x = 1, y = 2))
+
+f$z <- 3
+f
+
+f[[2]] <- NULL
+f
+
+### Code is a Tree
+lobstr::ast(f(a, "b"))
+
+lobstr::ast(f1(f2(a, b), f3(1, f4(2))))
+
+lobstr::ast(1 + 2 * 3)
