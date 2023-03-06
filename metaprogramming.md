@@ -1,13 +1,13 @@
 Metaprogramming
 ================
 GW Dean
-2023-03-04
+2023-03-05
 
 # Notes on Metaprogramming
 
 library(rlang) library(lobstr)
 
-### Code is Data
+### Code is data
 
 expr(mean(x, na.rm = TRUE))
 
@@ -25,10 +25,81 @@ f\$z \<- 3 f
 
 f\[\[2\]\] \<- NULL f
 
-### Code is a Tree
+### Code is a tree
 
 lobstr::ast(f(a, “b”))
 
 lobstr::ast(f1(f2(a, b), f3(1, f4(2))))
 
 lobstr::ast(1 + 2 \* 3)
+
+### Code can generate code
+
+Two main tools can be used to create new trees: - call2() - unquoting
+
+call2(“f”, 1, 2, 3)
+
+call2(“+”, 1, call2(“\*“, 2, 3))
+
+xx \<- expr(x + x) yy \<- expr(y + y)
+
+expr(!!xx / !!yy)
+
+cv \<- function(var) { var \<- enexpr(var) expr(sd(!!var) / mean(!!var))
+}
+
+cv(x)
+
+cv(x + y)
+
+cv(`)`)
+
+### Evaluation runs code
+
+eval(expr(x + y), env(x = 1, y = 10))
+
+eval(expr(x + y), env(x = 2, y = 100))
+
+x \<- 10 y \<- 100 eval(expr(x + y))
+
+A major advantage of evaluating code manually is that you can tweak the
+environment.
+
+Two main reasons to tweak the environment: - Temporarily override
+functions to implement a *domain specific language*. - Add a *data mask*
+so you can refer to variables in a data frame as if they are variables
+in an environment.
+
+### Customising evaluation with functions
+
+“Big Idea” -\> binding names to functions allows you to override the
+behaviour of existing functions.
+
+string_math \<- function(x) { e \<- env( caller_env(), `+` = function(x,
+y) paste0(x, y), `*` = function(x, y) strrep(x, y) ) eval(enexpr(x), e)
+}
+
+name \<- “Jim” string_math(“Yo” + name)
+
+string_math((“x” \* 2 + “-y”) \* 3)
+
+*dplyr* takes this idea to an extreme.
+
+library(dplyr) library(RSQLite)
+
+con \<- DBI::dbConnect(RSQLite::SQLite(), filename = “:memory:”)
+
+mtcars_db \<- copy_to(con, mtcars)
+
+mtcars_db %\>% filter(cyl \> 2) %\>% select(mpg:hp) %\>% head(10) %\>%
+show_query()
+
+DBI::dbDisconnect(con)
+
+### Customising evaluation with data
+
+df \<- data.frame(x = 1:5, y = sample(5)) eval_tidy(expr(x + y), df)
+
+with2 \<- function(df, expr) { eval_tidy(enexpr(expr), df) }
+
+with2(df, x + y)
