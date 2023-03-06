@@ -1,9 +1,16 @@
 Metaprogramming
 ================
 GW Dean
-2023-03-05
+2023-03-06
 
-# Notes on Metaprogramming
+# Notes on Metaprogramming in RStudio
+
+This document is written as a personal project to gain an understanding
+of Metaprogramming working within the RStudio IDE.
+
+THIS IS A WORK IN PROGRESS. VERY ROUGH.
+
+## Big Picture
 
 library(rlang) library(lobstr)
 
@@ -103,3 +110,52 @@ df \<- data.frame(x = 1:5, y = sample(5)) eval_tidy(expr(x + y), df)
 with2 \<- function(df, expr) { eval_tidy(enexpr(expr), df) }
 
 with2(df, x + y)
+
+### Quosures
+
+with2 \<- function(df, expr) { a \<- 1000 eval_tidy(enexpr(expr), df) }
+
+df \<- data.frame(x = 1:3) a \<- 10 with2(df, x + a)
+
+with2 \<- function(df, expr) { a \<- 1000 eval_tidy(enquo(expr), df) }
+
+with2(df, x + a)
+
+## Expressions
+
+y \<- x \* 10
+
+z \<- rlang::expr(y \<- x \* 10) z
+
+x \<- 4 eval(z) y
+
+### Abstract Syntax Trees
+
+Expressions are also called *abstract syntax trees* because the
+structure of code is hierarchical and be naturally represented as a
+tree.
+
+lobstr::ast(f(x, “y”, 1))
+
+lobstr::ast(f(g(1, 2), h(3, 4, i())))
+
+Abstract Syntax Trees only capture structural details of the code, not
+whitespace or comments:
+
+ast( f(x, y) \# important! )
+
+Below is an exception when the whitespace affects the AST.
+
+lobstr::ast(y \<- x)
+
+lobstr::ast(y \< -x)
+
+These two lines of code are equivalent:
+
+y \<- x \* 10
+
+`<-`(y, ’\*’(x, 10))
+
+lobstr::ast(y \<- x \* 10)
+
+lobstr::ast(`<-`(y, ’\*’(x, 10)))
